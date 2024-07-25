@@ -1,0 +1,28 @@
+You are required to implement the following Function 
+
+def LargeSmallSum(arr)
+
+The function accepts an integers arr of size ’length’ as its arguments you are required to return the sum of second largest  element from the even positions and second smallest from the odd position of given ‘arr’
+
+Assumption:
+
+All array elements are unique
+Treat the 0th position as even
+NOTE
+
+Return 0 if array is empty
+Return 0, if array length is 3 or less than 3
+
+arr = list(map(int,input("Enter the elements of the array:").split()))
+odd_array = []
+even_array = []
+if len(arr) <= 3:
+    print(0)
+for i in range(len(arr)):
+    if i%2 == 0:
+        even_array.append(arr[i])
+    else:
+        odd_array.append(arr[i])
+odd_array = sorted(odd_array)
+even_array = sorted(even_array)
+print("Sum of Second largest of even position and Second smallest of odd position:",even_array[-2]+odd_array[1])
